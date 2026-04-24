@@ -82,12 +82,25 @@ The system is composed of **5 interconnected dashboard layers**, each serving a 
 **Purpose:** Operational field view for Sales Leaders (SL) to prioritize merchant visits.
 
 - Built on **Mapbox** geographic rendering within Tableau
-- Color-coded by merchant type: `Merchant Basic` vs `Subs Active`
-- Icon layers for supplier type: `Null`, `Indomarco`, `Lokal Regular`, `Nasional Regular`
+- Color-coded by merchant type: `Merchant Basic` vs `Subs Active` vs `Subs & BTOK Active`
+- Icon layers for supplier type: `Null`, `Indomarco`, `Nasional Regular`
 - Summary table shows BTOK status (Never BTOK), subscription breakdown (Never Subscribed / Subs Active / Subs Expired), and HVM flag per kelurahan
-- Bottom detail table enables merchant-level drill-down with full KPI context
+- **Business Category map** layer shows merchant density and category spread across the zone
+- **HVM map** layer highlights High Value Merchants spatially — enabling prioritized field coverage
+- Filterable by `KECAMATAN` and `KELURAHAN` for granular territory management
 
 **Key Columns:** `KECAMATAN`, `KELURAHAN`, `Total Merchant Active`, `BTOK Status`, `Subs Status`, `Type Merchant`, `HVM`, `BTOK Traffic`, `Cash GMV`
+
+**Screenshots:**
+
+*Summary Table View*
+![Zoning Merchant Table](screenshots/04_Zoning_Merchant_table.png)
+
+*Main Merchant Map (by Type)*
+![Zoning Merchant Map](screenshots/04_Zoning_Merchant_map_main.png)
+
+*Business Category & HVM Map*
+![Zoning Merchant Business Category & HVM](screenshots/04_Zoning_Merchant_map_category_hvm.png)
 
 ---
 
@@ -149,17 +162,19 @@ The system is composed of **5 interconnected dashboard layers**, each serving a 
 ```
 zoning-champion-dashboard/
 │
-├── README.md                          ← You are here
+├── README.md                                        ← You are here
 │
 ├── screenshots/
-│   ├── 01_base_zoning_champion.png
-│   ├── 02_warehouse_zone_champion.png
-│   ├── 03_list_merchant_zoning.png
-│   ├── 04_zoning_merchant_map.png
-│   └── 05_increment_base_vs_actual.png
+│   ├── 01_base_zoning_champion.png                 ← Baseline snapshot per zone
+│   ├── 02_warehouse_zone_champion.png              ← Warehouse & supplier mapping
+│   ├── 03_list_merchant_zoning.png                 ← Merchant master data
+│   ├── 04_Zoning_Merchant_table.png                ← Summary table view
+│   ├── 04_Zoning_Merchant_map_main.png             ← Merchant map by type
+│   ├── 04_Zoning_Merchant_map_category_hvm.png     ← Business category & HVM map
+│   └── 05_increment_base_vs_actual.png             ← Performance delta evaluation
 │
 └── docs/
-    └── dashboard_overview.md          ← Extended documentation (optional)
+    └── dashboard_overview.md                        ← Extended documentation (optional)
 ```
 
 ---
